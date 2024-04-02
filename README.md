@@ -1,2 +1,5 @@
 # Data-Analysis-Portfolio-
-Aqui você encontrará os meus projetos de análise de dados
+Hi! I'm Enzo Antonello, glad to have you here.
+
+Here you can access my main Data Analysis projects.
+Thank you for your time!
