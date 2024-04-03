@@ -103,11 +103,23 @@ WHERE rank_sales < 4
 ;
 
 -- RESULT: With this query, we can see the items that generated the biggest income by country. Therefore, the MKT team can compare similar markets to see if those items match.
--- If one of those markets are not doing so good, they can either focus their strategy on the items that are generating income in the other country or review their strategy to the products that are not doing so good.
+-- If one of those markets are not doing so good, they can either focus their strategy on the items that are generating income in the other country or review the strategy to the products that are not doing so good.
 
 -- 5º >> Answer the third question: What are the top 3 products sold by country? 
+SELECT rank_sales,country, description, top_sales 
+FROM (SELECT 
+	null_description AS description,
+	SUM(quantity) AS top_sales,
+	RANK() OVER (PARTITION BY country ORDER BY SUM(quantity) DESC) AS rank_sales,
+	country
+FROM sales_wo_null
+GROUP BY country, null_description
+ORDER BY country ASC, top_sales DESC)
+WHERE rank_sales < 4
+;
 
-
+-- RESULT: This query is similar to the previous one, but instead of analysing income, it analyses the amount of products sold.
+-- This can give the markting team a view over items that might be selling a lot, but aren't generating much income and or profit. Thus, those items might not be a good target to their strategies.
 
 
 
