@@ -76,7 +76,7 @@ GROUP BY country
 ORDER BY total_income DESC
 ;
 -- RESULT: From this query, we can see that the main countries regarding income are "United Kingdom", "Netherlands" and "EIRE" (Ireland).
--- At this point, it'ld be important to comparte the expenses with the income by country to understand wheter the profit margin by country is within, above or below the expected.
+-- At this point, it'd be important to compare the expenses with the income by country to understand wheter the profit margin by country is within, above or below the expected.
 -- That should guide the marketing team into strategies for their biggest markets.
 -- If all profit margins are at a good level and the MKT team wants to make the sales grow in other countries, they can use the next question to make evaluate what's the best product to invest in their campaigns.
 
