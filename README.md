@@ -8,7 +8,9 @@ Here you can dive into detail of the thought process of each project I've built 
 Let's get to it!
 
 
-# Customer Segmentation Project (SQL)
+## SQL Projects
+
+### Customer Segmentation Project
 
 This project was based on a Kaggle dataset and allowed me to extract marketing strategies from it.
 
