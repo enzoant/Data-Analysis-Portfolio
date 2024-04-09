@@ -1,4 +1,4 @@
-# Data Analysis Portfolio
+# Data Analysis Portfolio, by Enzo Antonello
 Hi! I'm Enzo Antonello, glad to have you here.
 
 I'm a graduated Biologyst (Universidade Federal Fluminense) and I have a Data Analyst specialization undergoing right now (Data Science Academy).
