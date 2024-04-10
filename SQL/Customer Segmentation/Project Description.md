@@ -13,7 +13,7 @@ The SQL code can be found in the .SQL file in this folder.
 
 After cleaning the dataset by correcting null values, I started generating queries to answer the questions listed by the marketing team.
 
-1. What is the income per country? ([full .csv file](https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/SQL/Customer%20Segmentation/images%20and%20.csv%20files/customer%20segmentation%20table%201.csv)) 
+1. What is the income per country? ([full table 1.csv file](https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/SQL/Customer%20Segmentation/images%20and%20.csv%20files/customer%20segmentation%20table%201.csv)) 
 
 ![Here's the generated table from the query](https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/SQL/Customer%20Segmentation/images%20and%20.csv%20files/customer%20segmentation%20table%201%20(top%205).png?raw=true)
 
