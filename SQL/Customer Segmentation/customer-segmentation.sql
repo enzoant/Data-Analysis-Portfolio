@@ -106,15 +106,15 @@ WHERE rank_sales < 4
 -- If one of those markets are not doing so good, they can either focus their strategy on the items that are generating income in the other country or review the strategy to the products that are not doing so good.
 
 -- 5º >> Answer the third question: What are the top 3 products sold by country? 
-SELECT rank_sales,country, description, top_sales 
+SELECT rank_sales,country, description, top_sold_items
 FROM (SELECT 
 	null_description AS description,
-	SUM(quantity) AS top_sales,
+	SUM(quantity) AS top_sold_items,
 	RANK() OVER (PARTITION BY country ORDER BY SUM(quantity) DESC) AS rank_sales,
 	country
 FROM sales_wo_null
 GROUP BY country, null_description
-ORDER BY country ASC, top_sales DESC)
+ORDER BY country ASC, top_sold_items DESC)
 WHERE rank_sales < 4
 ;
 
