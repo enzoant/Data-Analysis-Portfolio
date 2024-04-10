@@ -9,7 +9,7 @@ The main questions they wanted to gather for their campaign were:
 2. What are the top 3 products that generated the most income by country?
 3. What are the top 3 products sold by country? 
 
-The SQL code can be found in the .SQL file in this folder.
+The SQL code can be found in the [.SQL file](https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/SQL/Customer%20Segmentation/customer-segmentation.sql) in this folder.
 
 After cleaning the dataset by correcting null values, I started generating queries to answer the questions listed by the marketing team.
 
