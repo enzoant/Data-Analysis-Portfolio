@@ -332,13 +332,13 @@ WHERE country IS NULL
 -- For the "date_added" column, we will replace the 10 missing values with the mode of the column "2020-01-01".
 
 UPDATE netflix_data.netflix_titles_v2
-SET date_added = (  SELECT
-						date_added
-					FROM netflix_data.netflix_titles_v2
-					GROUP BY date_added
-					ORDER BY COUNT(*) DESC
-					LIMIT 1
-				 )
+SET date_added = (  	SELECT
+				date_added
+			FROM netflix_data.netflix_titles_v2
+			GROUP BY date_added
+			ORDER BY COUNT(*) DESC
+			LIMIT 1
+		 )
 WHERE date_added IS NULL
 ;
 
@@ -400,8 +400,8 @@ SELECT
 	countries_split,
 	COUNT(countries_split) AS number_of_occurrences
 FROM (	SELECT
-			UNNEST(STRING_TO_ARRAY(country, ', ')) AS countries_split
-		FROM netflix_data.netflix_titles_v2)
+		UNNEST(STRING_TO_ARRAY(country, ', ')) AS countries_split
+	FROM netflix_data.netflix_titles_v2)
 GROUP BY countries_split
 HAVING countries_split <> 'Not informed'
 ORDER BY number_of_occurrences DESC
@@ -459,7 +459,7 @@ ORDER BY number_of_occurrences DESC
 
 SELECT
 	ROUND(AVG(number_of_seasons), 2) AS average_num_seasons
-FROM(SELECT
+FROM(	SELECT
 		CAST(SUBSTRING (duration FROM 1 FOR 2) AS INT) AS number_of_seasons
 	FROM netflix_data.netflix_titles_v2
 	WHERE type_ = 'TV Show')
@@ -471,8 +471,8 @@ SELECT
 	listed_in_split,
 	COUNT(listed_in_split) AS number_of_occurrences
 FROM (	SELECT
-			UNNEST(STRING_TO_ARRAY(listed_in, ', ')) AS listed_in_split
-		FROM netflix_data.netflix_titles_v2)
+		UNNEST(STRING_TO_ARRAY(listed_in, ', ')) AS listed_in_split
+	FROM netflix_data.netflix_titles_v2)
 GROUP BY listed_in_split
 ORDER BY number_of_occurrences DESC
 LIMIT 1
