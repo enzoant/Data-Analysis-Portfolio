@@ -3,7 +3,7 @@ Hi! I'm Enzo Antonello, glad to have you here.
 
 I'm a graduated Biologist with a Data Analysis specialization undergoing.
 
-Here you can dive into detail of the thought process of each project I've built by navigating into the folders, or having a quick glance at my favorite ones down below.
+Here you can dive into detail of the thought process of each project I've built by navigating into the folders, or having a quick glance at my favorite down below.
 
 Let's get to it!
 
