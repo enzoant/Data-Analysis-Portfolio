@@ -5,9 +5,6 @@ I'm a graduated Biologist with a Data Analysis specialization undergoing.
 
 Here you can dive into detail of the thought process of each project I've built by navigating into the folders, or having a quick glance at my favorite down below.
 
-Let's get to it!
-
-
 ## Top SQL Project
 
 ### [Customer Segmentation](https://github.com/enzoant/Data-Analysis-Portfolio/tree/Data-Analysis/SQL/Customer%20Segmentation)
