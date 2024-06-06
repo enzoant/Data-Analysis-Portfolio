@@ -36,51 +36,45 @@ A partir de tal documento, as principais necessidades da empresa podem ser extra
 
 ## Entidades e Atributos:
 
-• Loja
+- Loja
+  - Code (Primary Key)
+  - Name
+  - City
+  - State
+  - Postal Code
 
-- Code (Primary Key)
-- Name
-- City
-- State
-- Postal Code
+- Produto
+  - SKU Code (Primary Key)
+  - Name
+  - Brand
+  - Category
 
-• Produto
+- Salesmen
+  - Registration (Primary Key)
+  - Name
 
-- SKU Code (Primary Key)
-- Name
-- Brand
-- Category
+- Client
+  - Client ID
+  - Name
+  - Address
+  - City
+  - State
 
-• Salesmen
+- Date
+  - Full date
+  - Year
+  - Month
+  - Day
 
-- Registration (Primary Key)
-- Name
-
-• Client
-
-- Client ID
-- Name
-- Address
-- City
-- State
-
-• Date
-
-- Full date
-- Year
-- Month
-- Day
-
-• Sale
-
-- Date (Foreign Key)
-- Transaction ID (Primary Key)
-- Product (Foreign Key)
-- Store (Foreign Key)
-- Salesman (Foreign Key)
-- Client (Foreign Key)
-- Amount sold
-- Total sold
+- Sale
+  - Date (Foreign Key)
+  - Transaction ID (Primary Key)
+  - Product (Foreign Key)
+  - Store (Foreign Key)
+  - Salesman (Foreign Key)
+  - Client (Foreign Key)
+  - Amount sold
+  - Total sold
 
 ## Relationships:
 
@@ -118,44 +112,44 @@ Com base nos modelos conceitual e dimensional podemos criar o seguinte modelo l�
 Tabelas e Colunas:
 
 - DIM_LOJA
-• Codigo (PK): INT
-• Nome: VARCHAR (255)
-• Cidade: VARCHAR (255)
-• Estado: CHAR (2)
+  - Codigo (PK): INT
+  - Nome: VARCHAR (255)
+  - Cidade: VARCHAR (255)
+  - Estado: CHAR (2)
 - DIM PRODUTO
-• Codigo_SKU (PK): INT
-• Nome: VARCHAR (255)
-• Marca: VARCHAR (255)
-• Categoria: VARCHAR (255)
+  - Codigo_SKU (PK): INT
+  - Nome: VARCHAR (255)
+  - Marca: VARCHAR (255)
+  - Categoria: VARCHAR (255)
 - DIM_CLIENTE
-• ID_Cliente (PK): INT
-• Nome: VARCHAR (255)
-• Endereço: VARCHAR (255)
-• Cidade: VARCHAR (255)
-• Estado: CHAR (2)
+  - ID_Cliente (PK): INT
+  - Nome: VARCHAR (255)
+  - Endereço: VARCHAR (255)
+  - Cidade: VARCHAR (255)
+  - Estado: CHAR (2)
 - DIM VENDEDOR
-• Matricula (PK): INT
-• Nome: VARCHAR (255)
+  - Matricula (PK): INT
+  - Nome: VARCHAR (255)
 - DIM_DATA
-• Data Completa (PK): DATE
-• Ano: INT
-• Mes: INT
-• Dia: INT
+  - Data Completa (PK): DATE
+  - Ano: INT
+  - Mes: INT
+  - Dia: INT
 - FATO_VENDA
-• Data (FK) -> DIM_Data.Data_Completa: DATE 
-• Produto (FK) -> DIM_Produto.Codigo_SKU: INT
-• Loja (FK) -> DIM_Loja.Codigo: INT
-• Vendedor (FK) -> DIM_Vendedor.Matrícula: INT
-• Cliente (FK) -> DIM_Cliente.ID_Cliente: INT
-• Quantidade Vendida: INT
-• Total_Venda: DECIMAL (10,2)
-• ID_Transacao (NK): INT
+  - Data (FK) -> DIM_Data.Data_Completa: DATE 
+  - Produto (FK) -> DIM_Produto.Codigo_SKU: INT
+  - Loja (FK) -> DIM_Loja.Codigo: INT
+  - Vendedor (FK) -> DIM_Vendedor.Matrícula: INT
+  - Cliente (FK) -> DIM_Cliente.ID_Cliente: INT
+  - Quantidade Vendida: INT
+  - Total_Venda: DECIMAL (10,2)
+  - ID_Transacao (NK): INT
 
 **Chaves**:
 
-• PK: Chave Primária (Primary Ley)
-• FK: Chave Estrangeira (Foreign Key)
-• NK: Chave Natural (Natural Key)
+- PK: Chave Primária (Primary Ley)
+- FK: Chave Estrangeira (Foreign Key)
+- NK: Chave Natural (Natural Key)
 
 **Observações**:
 
