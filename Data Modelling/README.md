@@ -32,7 +32,7 @@ ________________________________________________________________________________
 
 # Modelo Conceitual
 
-A partir de tal documento, as principais necessidades da empresa podem ser extraídos. Assim, é possível montar as entidades, atributos e relacionamentos identificados, e assim criar o seguinte modelo conceitual para o Data Warehouse:
+A partir de tal documento, as principais necessidades da empresa podem ser extraídos. Assim, é possível montar as entidades, atributos e relacionamentos identificados, e assim criar o seguinte modelo conceitual para o Data Warehouse (DW):
 
 ## Entidades e Atributos:
 
@@ -41,7 +41,6 @@ A partir de tal documento, as principais necessidades da empresa podem ser extra
   - Name
   - City
   - State
-  - Postal Code
 
 - Produto
   - SKU Code (Primary Key)
@@ -84,7 +83,7 @@ A partir de tal documento, as principais necessidades da empresa podem ser extra
 - **Sale is made by Seller**: A sale is made by a single seller, but a seller can make several sales.
 - **Sale occurs on a Date**: A sale occurs on a single date, but several sales can occur on the same date.
 
-Este modelo conceitual serve como um guia para a construção do modelo dimensional e do modelo lógico do Data Warehouse, facilitando a organização dos dados e a realização de análises e consultas.
+Este modelo conceitual serve como um guia para a construção do modelo dimensional e do modelo lógico do Data Warehouse (DW), facilitando a organização dos dados e a realização de análises e consultas.
 
 Seguimos, portanto, com a preparação do modelo dimensional e do modelo lógico.
 _______________________________________________________________________________________________________________________________________________________________
@@ -107,43 +106,43 @@ ________________________________________________________________________________
 
 Abaixo você encontra o Modelo Lógico do Projeto 3, que pode ser usado como template para outros projetos.
 
-Com base nos modelos conceitual e dimensional podemos criar o seguinte modelo lógico para o Data Warehouse:
+Com base nos modelos conceitual e dimensional podemos criar o seguinte modelo lógico para o Data Warehouse (DW):
 
 Tabelas e Colunas:
 
-- DIM_LOJA
-  - Codigo (PK): INT
-  - Nome: VARCHAR (255)
-  - Cidade: VARCHAR (255)
-  - Estado: CHAR (2)
-- DIM PRODUTO
-  - Codigo_SKU (PK): INT
-  - Nome: VARCHAR (255)
-  - Marca: VARCHAR (255)
-  - Categoria: VARCHAR (255)
-- DIM_CLIENTE
-  - ID_Cliente (PK): INT
-  - Nome: VARCHAR (255)
-  - Endereço: VARCHAR (255)
-  - Cidade: VARCHAR (255)
-  - Estado: CHAR (2)
-- DIM VENDEDOR
-  - Matricula (PK): INT
-  - Nome: VARCHAR (255)
-- DIM_DATA
-  - Data Completa (PK): DATE
-  - Ano: INT
-  - Mes: INT
-  - Dia: INT
-- FATO_VENDA
-  - Data (FK) -> DIM_Data.Data_Completa: DATE 
-  - Produto (FK) -> DIM_Produto.Codigo_SKU: INT
-  - Loja (FK) -> DIM_Loja.Codigo: INT
-  - Vendedor (FK) -> DIM_Vendedor.Matrícula: INT
-  - Cliente (FK) -> DIM_Cliente.ID_Cliente: INT
-  - Quantidade Vendida: INT
-  - Total_Venda: DECIMAL (10,2)
-  - ID_Transacao (NK): INT
+- DIM_STORE
+  - Code (PK): INT
+  - Name: VARCHAR (255)
+  - City: VARCHAR (255)
+  - State: CHAR (2)
+- DIM_PRODUCT
+  - SKU_Code (PK): INT
+  - Name: VARCHAR (255)
+  - Brand: VARCHAR (255)
+  - Category: VARCHAR (255)
+- DIM_CLIENT
+  - Client_ID (PK): INT
+  - Name: VARCHAR (255)
+  - Address: VARCHAR (255)
+  - City: VARCHAR (255)
+  - State: CHAR (2)
+- DIM_SELLER
+  - Registration (PK): INT
+  - Name: VARCHAR (255)
+- DIM_DATE
+  - Full_date (PK): DATE
+  - Year: INT
+  - Month: INT
+  - Day: INT
+- FACT_SALES
+  - Date (FK) -> DIM_Data.Data_Completa: DATE 
+  - Product (FK) -> DIM_Produto.Codigo_SKU: INT
+  - Store (FK) -> DIM_Loja.Codigo: INT
+  - Seller (FK) -> DIM_Vendedor.Matrícula: INT
+  - Client (FK) -> DIM_Cliente.ID_Cliente: INT
+  - Amount_sold: INT
+  - Total_sold: DECIMAL (10,2)
+  - Transaction_ID (NK): INT
 
 **Chaves**:
 
@@ -158,8 +157,192 @@ Tabelas e Colunas:
 - A chave natural é chave primária na fonte, mas será apenas informação complementar no DW.
 - As FKs na tabela FATO formarão a chave primária composta da tabela.
 
-Este modelo lógico representa a estrutura do Data Warehouse em um nível mais detalhado, definindo as tabelas, colunas e relacionamentos que serão implementados no banco de dados.
+Este modelo lógico representa a estrutura do Data Warehouse (DW) em um nível mais detalhado, definindo as tabelas, colunas e relacionamentos que serão implementados no banco de dados.
 
+_______________________________________________________________________________________________________________________________________________________________
+# Modelo Físico
+
+Tendo em mãos os modelos dimensional e lógico, podemos seguir para a preparação do Modelo Físico.
+
+Em um sistema PostgreSQL, utilizamos o pgAdmin para acessar o servidor e preparar as tabelas do nosso Data Warehouse.
+
+O código utilizado é o que segue abaixo. Os comentários ao lado de cada trecho possuem instruções e/ou descrições das diversas decisões tomadas.
+
+```
+-- Projeto 3 - Modelo Físico
+CREATE SCHEMA dw AUTHORIZATION admin -- Criação de novo Schema, para manter o DW organizado. 
+
+-- Create DIMENSIONS tables
+-- Create stores table
+CREATE TABLE dw.DIM_STORE (
+    Code INT PRIMARY KEY,
+    Name VARCHAR(255),
+    City VARCHAR(255),
+    State CHAR(2)
+);
+
+-- Create products table
+CREATE TABLE dw.DIM_PRODUCT (
+    SKU_Code INT PRIMARY KEY,
+    Name VARCHAR(255),
+    Brand VARCHAR(255),
+    Category VARCHAR(255)
+);
+
+-- Create clients table
+CREATE TABLE dw.DIM_CLIENT (
+    Client_ID INT PRIMARY KEY,
+    Name VARCHAR(255),
+    Address VARCHAR(255),
+    City VARCHAR(255),
+    State CHAR(2)
+);
+
+-- Create sellers table
+CREATE TABLE dw.DIM_SELLER (
+    Registration INT PRIMARY KEY,
+    Name VARCHAR(255)
+);
+
+-- Create dates table
+CREATE TABLE dw.DIM_DATE(
+    Full_date DATE PRIMARY KEY,
+    Year_date INT,
+    Month_date INT,
+    Day_date INT
+);
+
+-- Create sales FACT table
+CREATE TABLE dw.FACT_SALES (
+    Date_ DATE,
+    Product INT,
+    Store INT,
+    Seller INT,
+    Client INT,
+    Amount_sold INT,
+    Total_sold DECIMAL(10,2),
+    Transaction_ID INT,
+    PRIMARY KEY (Date_, Product, Store, Seller, Client),
+    FOREIGN KEY (Date_) REFERENCES dw.DIM_DATE(Full_date), -- With these references, the information inserted in the DIM talbe will be accessible to the FACT table. 
+    FOREIGN KEY (Product) REFERENCES dw.DIM_PRODUCT(SKU_Code),
+    FOREIGN KEY (Store) REFERENCES dw.DIM_STORE(Code),
+    FOREIGN KEY (Seller) REFERENCES dw.DIM_SELLER(Registration),
+    FOREIGN KEY (Client) REFERENCES dw.DIM_CLIENT(Client_ID)
+);
+```
+
+```
+
+-- Carrega a tabela
+INSERT INTO dw.DIM_STORE (Code, Name, City, State) VALUES
+(1, 'Store A', 'São Paulo', 'SP'),
+(2, 'Store B', 'Rio de Janeiro', 'RJ'),
+(3, 'Store C', 'Belo Horizonte', 'MG'),
+(4, 'Store D', 'Curitiba', 'PR'),
+(5, 'Store E', 'Porto Alegre', 'RS'),
+(6, 'Store F', 'Salvador', 'BA'),
+(7, 'Store G', 'Recife', 'PE'),
+(8, 'Store H', 'Fortaleza', 'CE'),
+(9, 'Store I', 'Brasília', 'DF'),
+(10, 'Store J', 'Goiânia', 'GO');
+
+-- Verifique se os dados foram inseridos corretamente
+SELECT * FROM dw.DIM_STORE;
+
+-- Carrega a tabela
+INSERT INTO dw.DIM_PRODUCT (SKU_Code, Name, Brand, Category) VALUES
+(101, 'TV UHD', 'Electron', 'Eletronics'),
+(102, 'Smartphone 5G 128GB', 'TechPlus', 'Cell Phones'),
+(103, 'Notebook Pro 8GB', 'TechPlus', 'IT Products'),
+(104, 'Cafeteira Expresso', 'Cafex', 'Household Appliances'),
+(105, 'Tênis Corrida Ultra', 'Sportex', 'Clothing'),
+(106, 'Blender Compacto', 'Cafex', 'Household Appliances'),
+(107, 'Camiseta Poliéster', 'Sportex', 'Clothing'),
+(108, 'Mouse Sem Fio Ergonômico', 'OfficeTech', 'Accessories'),
+(109, 'Fone de Ouvido Bluetooth', 'TechPlus', 'Accessories'),
+(110, 'Geladeira Duplex 500L', 'Cafex', 'Household Appliances');
+
+-- Verificação dos dados inseridos
+SELECT * FROM dw.DIM_PRODUCT;
+
+-- Carrega a tabela
+INSERT INTO dw.DIM_CLIENT (Client_ID, Name, Address, City, State) VALUES
+(1, 'Maria Silva', 'Rua das Flores, 123', 'São Paulo', 'SP'),
+(2, 'João Souza', 'Av. Brasil, 456', 'Rio de Janeiro', 'RJ'),
+(3, 'Ana Costa', 'Praça da Árvore, 789', 'Belo Horizonte', 'MG'),
+(4, 'Carlos Andrade', 'Rua do Sol, 101', 'Curitiba', 'PR'),
+(5, 'Fernanda Gomes', 'Av. Boa Viagem, 202', 'Recife', 'PE'),
+(6, 'Lucas Martins', 'Largo dos Leões, 303', 'Porto Alegre', 'RS'),
+(7, 'Patricia Lima', 'Rua das Orquídeas, 404', 'Salvador', 'BA'),
+(8, 'Rafael Dias', 'Av. Central, 505', 'Brasília', 'DF'),
+(9, 'Cláudia Rocha', 'Praça do Mercado, 606', 'Fortaleza', 'CE'),
+(10, 'Eduardo Pereira', 'Rua da Harmonia, 707', 'Manaus', 'AM');
+
+-- Verifique se os dados foram inseridos corretamente
+SELECT * FROM dw.DIM_CLIENT;
+
+-- Carrega a tabela
+INSERT INTO dw.DIM_SELLER (Registration, Name) VALUES
+(101, 'Carlos Henrique'),
+(102, 'Mariana Costa'),
+(103, 'João Pedro Almeida'),
+(104, 'Lúcia Ferreira'),
+(105, 'Rogério Silva'),
+(106, 'Fernanda Lima'),
+(107, 'Eduardo Martins'),
+(108, 'Ana Beatriz Souza'),
+(109, 'Ricardo Oliveira'),
+(110, 'Patrícia Barbosa');
+
+-- Verifique se os dados foram inseridos corretamente
+SELECT * FROM dw.DIM_SELLER;
+
+--- Carrega a tabela
+INSERT INTO dw.DIM_DATE (Full_date, Year_date, Month_date, Day_date)
+SELECT 
+    Full_date,
+    EXTRACT(YEAR FROM data) AS Year_date,
+    EXTRACT(MONTH FROM data) AS Month_date,
+    EXTRACT(DAY FROM data) AS Day_date
+FROM generate_series('2024-01-01'::date, '2024-12-31'::date, '1 day'::interval) AS Full_date;
+
+-- Verifique se os dados foram inseridos corretamente
+SELECT * FROM dw.DIM_DATE;
+
+-- Cria uma sequence para gerar valor sequenciais para campo de ID
+CREATE SEQUENCE transaction_seq;
+
+-- Cria função para carregar a tabela fato a partir das tabelas de dimensão
+CREATE OR REPLACE FUNCTION dw.load_FACT_SALES()
+RETURNS VOID AS $$
+BEGIN
+    -- Assegurando que pelo menos 1000 registros únicos sejam inseridos, repetindo os dados das dimensões conforme necessário
+    INSERT INTO dw.FACT_SALES (Date_, Product, Store, Seller, Client, Amount_sold, Total_sold, Transaction_ID)
+    SELECT
+        d.Full_date,
+        p.SKU_Code,
+        l.Code,
+        v.Registration,
+        c.Client_ID,
+        (RANDOM() * 10 + 1)::INT AS Amount_sold,  -- Gera quantidade vendida entre 1 e 10
+        (RANDOM() * 1000 + 100)::NUMERIC(10,2) AS Total_sold,  -- Gera valor total da venda entre 100 e 1100
+        nextval('transaction_seq') AS Transaction_ID -- Sequência para ID de transação
+    FROM
+        (SELECT Full_date, ROW_NUMBER() OVER (ORDER BY RANDOM()) AS rn FROM dw.DIM_DATE) d
+        JOIN (SELECT SKU_Code, ROW_NUMBER() OVER (ORDER BY RANDOM()) AS rn FROM dw.DIM_PRODUCT) p ON MOD(d.rn, (SELECT COUNT(*) FROM dw.DIM_PRODUCT)) = p.rn % (SELECT COUNT(*) FROM dw.DIM_PRODUCT)
+        JOIN (SELECT Code, ROW_NUMBER() OVER (ORDER BY RANDOM()) AS rn FROM dw.DIM_STORE) l ON MOD(d.rn, (SELECT COUNT(*) FROM dw.DIM_STORE)) = l.rn % (SELECT COUNT(*) FROM dw.DIM_STORE)
+        JOIN (SELECT Registration, ROW_NUMBER() OVER (ORDER BY RANDOM()) AS rn FROM dw.DIM_SELLER) v ON MOD(d.rn, (SELECT COUNT(*) FROM dw.DIM_SELLER)) = v.rn % (SELECT COUNT(*) FROM dw.DIM_SELLER)
+        JOIN (SELECT Client_ID, ROW_NUMBER() OVER (ORDER BY RANDOM()) AS rn FROM dw.DIM_CLIENT) c ON MOD(d.rn, (SELECT COUNT(*) FROM dw.DIM_CLIENT)) = c.rn % (SELECT COUNT(*) FROM dw.DIM_CLIENT)
+    WHERE d.rn <= 1000;  -- Limita a inserção aos primeiros 1000 registros
+END;
+$$ LANGUAGE plpgsql;
+
+-- Executa a função
+SELECT dw.load_FACT_SALES();
+
+-- Verifique se os dados foram inseridos corretamente
+SELECT * FROM dw.FACT_SALES;
+```
 
 
 
