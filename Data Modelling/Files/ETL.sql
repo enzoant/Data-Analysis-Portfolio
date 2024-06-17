@@ -106,7 +106,7 @@ INSERT INTO dw.DIM_PRODUCT (SKU_Code, Name, Brand, Category) VALUES
 (181, 'Wireless HDMI Transmitter', 'HDMITech', 'Electronics'),
 (182, 'Wireless Smart Door Lock', 'SecureLock', 'Smart Home Devices'),
 (183, 'Portable Solar Charger', 'SolarCharge', 'Mobile Accessories'),
-(185, 'Wireless Charging Alarm Clock', 'WakeUpCharge', 'Smart Home Devices'),
+(184, 'Wireless Charging Alarm Clock', 'WakeUpCharge', 'Smart Home Devices'),
 (185, 'External SSD 2TB', 'SpeedyDrive', 'Storage Devices'),
 (186, 'Smart Glasses', 'SmartOptics', 'Wearable Devices'),
 (187, 'Wireless Bluetooth Adapter', 'BlueLink', 'Computer Accessories'),
@@ -525,7 +525,7 @@ INSERT INTO dw.DIM_CLIENT (Client_ID, Name, Address, City, State) VALUES
 (347, 'Josie Golden', 'Rua Arnaldo Cruz, 880', 'Manaus', 'AM'),
 (348, 'Amias Bates', 'Rua Gutermberg, 568', 'Belo Horizonte', 'MG'),
 (349, 'Madilyn Alfaro', 'Rua Gustavo Alegre, 849', 'Recife', 'PE'),
-(350, 'Xzavier Flowers', 'Rua Meireles Cunha, 522', 'Belo Horizonte', 'MG')
+(350, 'Xzavier Flowers', 'Rua Meireles Cunha, 522', 'Belo Horizonte', 'MG');
 
 -- Inserts data in the table
 INSERT INTO dw.DIM_SELLER (Registration, Name) VALUES
