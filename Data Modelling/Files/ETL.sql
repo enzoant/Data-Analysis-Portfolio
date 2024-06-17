@@ -1,6 +1,6 @@
--- Projeto 3 - ETL Para Carga de Dados
+-- Portfolio Project - ETL - Loading data
 
--- Carrega a tabela
+-- Inserts data in the table
 INSERT INTO dw.DIM_STORE (Code, Name, City, State) VALUES
 (1,  'Store A', 'São Paulo', 'SP'),
 (2,  'Store B', 'Rio de Janeiro', 'RJ'),
@@ -21,10 +21,7 @@ INSERT INTO dw.DIM_STORE (Code, Name, City, State) VALUES
 (17, 'Store Q', 'Natal', 'RN'),
 (18, 'Store R', 'Maceió', 'AL');
 
--- Verifique se os dados foram inseridos corretamente
-SELECT * FROM dw.DIM_STORE;
-
--- Carrega a tabela
+-- Inserts data in the table
 INSERT INTO dw.DIM_PRODUCT (SKU_Code, Name, Brand, Category) VALUES
 (101, 'Smartwatch Plus', 'WearTech', 'Wearable Devices'),
 (102, 'Wireless Router', 'NetLink', 'Networking Devices'),
@@ -177,11 +174,7 @@ INSERT INTO dw.DIM_PRODUCT (SKU_Code, Name, Brand, Category) VALUES
 (249, 'Smart Vacuum Cleaner', 'VacuumTech', 'Home Appliances'),
 (250, 'Wireless Charging Desk Organizer', 'ChargeCaddy', 'Office Electronics');
 
-
--- Verificação dos dados inseridos
-SELECT * FROM dw.DIM_PRODUCT;
-
--- Carrega a tabela
+-- Inserts data in the table
 INSERT INTO dw.DIM_CLIENT (Client_ID, Name, Address, City, State) VALUES
 (1, 'Belle Garrison', 'Rua Maria Santidade, 572', 'São Paulo', 'SP'),
 (2, 'Noe Sellers', 'Rua Gutermberg, 785', 'Brasília', 'DF'),
@@ -534,10 +527,7 @@ INSERT INTO dw.DIM_CLIENT (Client_ID, Name, Address, City, State) VALUES
 (349, 'Madilyn Alfaro', 'Rua Gustavo Alegre, 849', 'Recife', 'PE'),
 (350, 'Xzavier Flowers', 'Rua Meireles Cunha, 522', 'Belo Horizonte', 'MG')
 
--- Verifique se os dados foram inseridos corretamente
-SELECT * FROM dw.DIM_CLIENT;
-
--- Carrega a tabela
+-- Inserts data in the table
 INSERT INTO dw.DIM_SELLER (Registration, Name) VALUES
 (1, 'Ariya Peterson'),
 (2, 'Santiago Tang'),
@@ -940,10 +930,7 @@ INSERT INTO dw.DIM_SELLER (Registration, Name) VALUES
 (399, 'Barbara Dyer'),
 (400, 'Atreus O’Connor');
 
--- Verifique se os dados foram inseridos corretamente
-SELECT * FROM dw.DIM_SELLER;
-
---- Carrega a tabela
+-- Inserts data in the table
 INSERT INTO dw.DIM_DATE (Full_date, Year_date, Month_date, Day_date)
 SELECT 
     Full_date,
@@ -952,17 +939,14 @@ SELECT
     EXTRACT(DAY FROM Full_date) AS Day_date
 FROM generate_series('2023-01-01'::date, '2023-12-31'::date, '1 day'::interval) AS Full_date;
 
--- Verifique se os dados foram inseridos corretamente
-SELECT * FROM dw.DIM_DATE;
-
--- Cria uma sequence para gerar valor sequenciais para campo de ID
+-- Create a sequence to generate sequential values ​​for the ID field
 CREATE SEQUENCE transaction_seq;
 
--- Cria função para carregar a tabela fato a partir das tabelas de dimensão
+-- Create function to load the fact table from the dimension tables
 CREATE OR REPLACE FUNCTION dw.load_FACT_SALES()
 RETURNS VOID AS $$
 BEGIN
-    -- Assegurando que pelo menos 1000 registros únicos sejam inseridos, repetindo os dados das dimensões conforme necessário
+    -- Ensuring that at least 1000 unique records are inserted, repeating dimension data as necessary
     INSERT INTO dw.FACT_SALES (Date_, Product, Store, Seller, Client, Amount_sold, Total_sold, Transaction_ID)
     SELECT
         d.Full_date,
@@ -970,21 +954,18 @@ BEGIN
         l.Code,
         v.Registration,
         c.Client_ID,
-        (RANDOM() * 10 + 1)::INT AS Amount_sold,  -- Gera quantidade vendida entre 1 e 10
-        (RANDOM() * 1000 + 100)::NUMERIC(10,2) AS Total_sold,  -- Gera valor total da venda entre 100 e 1100
-        nextval('transaction_seq') AS Transaction_ID -- Sequência para ID de transação
+        (RANDOM() * 10 + 1)::INT AS Amount_sold,  -- Generates quantity sold between 1 and 10
+        (RANDOM() * 1000 + 100)::NUMERIC(10,2) AS Total_sold,  -- Generates total sale value between 100 and 1100
+        nextval('transaction_seq') AS Transaction_ID -- Sequence for transaction ID
     FROM
         (SELECT Full_date, ROW_NUMBER() OVER (ORDER BY RANDOM()) AS rn FROM dw.DIM_DATE) d
         JOIN (SELECT SKU_Code, ROW_NUMBER() OVER (ORDER BY RANDOM()) AS rn FROM dw.DIM_PRODUCT) p ON MOD(d.rn, (SELECT COUNT(*) FROM dw.DIM_PRODUCT)) = p.rn % (SELECT COUNT(*) FROM dw.DIM_PRODUCT)
         JOIN (SELECT Code, ROW_NUMBER() OVER (ORDER BY RANDOM()) AS rn FROM dw.DIM_STORE) l ON MOD(d.rn, (SELECT COUNT(*) FROM dw.DIM_STORE)) = l.rn % (SELECT COUNT(*) FROM dw.DIM_STORE)
         JOIN (SELECT Registration, ROW_NUMBER() OVER (ORDER BY RANDOM()) AS rn FROM dw.DIM_SELLER) v ON MOD(d.rn, (SELECT COUNT(*) FROM dw.DIM_SELLER)) = v.rn % (SELECT COUNT(*) FROM dw.DIM_SELLER)
         JOIN (SELECT Client_ID, ROW_NUMBER() OVER (ORDER BY RANDOM()) AS rn FROM dw.DIM_CLIENT) c ON MOD(d.rn, (SELECT COUNT(*) FROM dw.DIM_CLIENT)) = c.rn % (SELECT COUNT(*) FROM dw.DIM_CLIENT)
-    WHERE d.rn <= 1000;  -- Limita a inserção aos primeiros 1000 registros
+    WHERE d.rn <= 1000;  -- Limit insertion to the first 1000 records
 END;
 $$ LANGUAGE plpgsql;
 
--- Executa a função
+-- Executes the function
 SELECT dw.load_FACT_SALES();
-
--- Verifique se os dados foram inseridos corretamente
-SELECT * FROM dw.FACT_SALES;
