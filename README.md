@@ -1,4 +1,4 @@
-![file]()
+![wallpaper](https://github.com/enzoant/Repo-Files/blob/main/Files/Enzo-walpapper.jpg)
 
 # Data Analysis Portfolio, by Enzo Antonello
 Hi! I'm Enzo Antonello, glad to have you here.
