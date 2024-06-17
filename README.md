@@ -1,3 +1,5 @@
+![file]()
+
 # Data Analysis Portfolio, by Enzo Antonello
 Hi! I'm Enzo Antonello, glad to have you here.
 
