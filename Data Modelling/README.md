@@ -235,16 +235,13 @@ This test data was made using AI tools, data freely available in the internet an
 _______________________________________________________________________________________________________________________________________________________________
 # Database integration with PowerBI
 
+After the integration of the Data Warehouse with PowerBI, we can start working on our analysis and dashboards for decision making, as well as answering the questions proposed by the company.
 
+You can see in the screenshot below that the physical model has the Star Schema approach:
+![file](https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Data%20Modelling/Files/DW%20Integration.png)
 
-
-
-
-
-
-
-
-
+_______________________________________________________________________________________________________________________________________________________________
+# Dashboard Creation and Insight Extraction
 
 
 
