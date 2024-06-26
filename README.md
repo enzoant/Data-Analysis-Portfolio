@@ -21,12 +21,12 @@ Here you can dive into detail of the thought process of each project I've built 
       <b>Image 1 - Star Schema model</b>
     </td>
     <td>
-      <img src="https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Data%20Modelling/Files/Portfolio%20Project%20-%20Income%20view.png" alt="Invoice view dashboard" width="320"/>
+      <img src="https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Data%20Modelling/Files/Portfolio%20Project%20-%20Income%20View.jpg" alt="Invoice view dashboard" width="320"/>
       <br>
       <b>Image 2 - Invoice view dashboard</b>
     </td>
     <td>
-      <img src="https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Data%20Modelling/Files/Portfolio%20Project%20-%20Product%20view.png" alt="Project view dashboard" width="320"/>
+      <img src="https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Data%20Modelling/Files/Portfolio%20Project%20-%20Product%20View.jpg" alt="Project view dashboard" width="320"/>
       <br>
       <b>Image 3 - Project view dashboard</b>
     </td>
