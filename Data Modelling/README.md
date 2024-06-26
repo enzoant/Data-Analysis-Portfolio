@@ -249,11 +249,11 @@ From the integration with PowerBI, we can prepare reports that can be generated 
 
 
 ### Income View
-![income_view](https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Data%20Modelling/Files/Portfolio%20Project%20-%20Income%20view.png)
+![income_view](https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Data%20Modelling/Files/Portfolio%20Project%20-%20Income%20View.jpg)
 
 
 ### Product View
-![product view](https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Data%20Modelling/Files/Portfolio%20Project%20-%20Product%20view.png)
+![product view](https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Data%20Modelling/Files/Portfolio%20Project%20-%20Product%20View.jpg)
 
 
 Those dashboards will allow the decision makers for each sector to be able to track their metrics.
