@@ -1,4 +1,4 @@
-![wallpaper](https://github.com/enzoant/Repo-Files/blob/main/Files/Enzo-walpapper.jpg)
+![wallpaper](https://github.com/enzoant/Repo-Files/blob/main/Files/Capa%20git%20enzo.png)
 
 # Data Analysis Portfolio, by Enzo Antonello
 Hi! I'm Enzo Antonello, glad to have you here.
