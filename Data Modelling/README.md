@@ -243,16 +243,26 @@ You can see in the screenshot below that the physical model has the Star Schema 
 _______________________________________________________________________________________________________________________________________________________________
 # Dashboard Creation and Insight Extraction
 
+From the integration with PowerBI, we can prepare reports that can be generated monthly or annually for the business areas. The examples below represent a visualization version of the data based on the year 2023. If there was data from other years, it could be easily viewed using the filter.
 
 
+### Income View
+![income_view](https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Data%20Modelling/Files/Portfolio%20Project%20-%20Income%20view.png)
 
 
+### Product View
+![product view](https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Data%20Modelling/Files/Portfolio%20Project%20-%20Product%20view.png)
 
 
+Those dashboards will allow the decision makers for each sector to be able to track their metrics.
 
+_______________________________________________________________________________________________________________________________________________________________
+# Final Comments
 
+This project focused on the process of creating a Data Warehouse, adding data to it and visualizing it's data. Next steps would be analysing the data with python for insight extraction and new dashboard creation to visualize it, if needed.
 
+These next steps may be done in the future in this very same project.
 
+Thank you for your atention to this project.
 
-
-
+_______________________________________________________________________________________________________________________________________________________________
