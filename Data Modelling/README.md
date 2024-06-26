@@ -232,7 +232,7 @@ CREATE TABLE dw.FACT_SALES (
 _______________________________________________________________________________________________________________________________________________________________
 # Extraction, Transform, Load (ETL)
 
-Since this is a project beeing made from scratch, there is no database to extract and transform data from. Thus, I've built a SQL script to load some test data. The script can be checked [here](https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Data%20Modelling/Files/ETL.sql)
+Since this is a project beeing made from scratch, there is no database to extract and transform data from. Thus, I've built a SQL script to load some test data. The script can be checked [here](https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Data%20Modelling/Files/ETL.sql).
 This test data was made using AI tools, data freely available in the internet and python Scripts.
 _______________________________________________________________________________________________________________________________________________________________
 # Database integration with PowerBI
