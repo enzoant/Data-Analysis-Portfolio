@@ -1,9 +1,11 @@
 # Project Preview
 
+This project will focus on the process of creating a Data Warehouse (DW), adding data to it and visualizing it's data. We well work over a fictional company, with it's activities described below. That information will be used to make the first step of the project: **the company's conceptual model for the DW**.
+
 After a series of meetings with different sectors of the company and senior leadership, here is the general overview of the project:
 
 _______________________________________________________________________________________________________________________________________________________________
-# [Business Analysis](https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Data%20Modelling/Files/Business_Analysis_Data_Modelling_Project.pdf)
+## [Business Analysis](https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Data%20Modelling/Files/Business_Analysis_Data_Modelling_Project.pdf)
 
 *High Computing Manufacture Inc* is a company specialized in manufacturing and selling electronics, with a particular focus on computer equipment. The company operates with aggressive profit margins and, although the marketing investment is modest, it is continuous. It has several stores across Brazil and employs about 400 people.
 
