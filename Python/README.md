@@ -1,8 +1,8 @@
-# Python Project - Portfolio
+# Python Project - Pharmaceutical research analysis
 
 This project will focus on presenting some data processing and statistical analisys using python. The dataset file used is available at the "files" folder of this project.
 
-This description is a quick glimpse on what was analysed on this project. For further code detais, you can check the "technical report" file on the files folder.
+This description is a quick glimpse on what was analysed on this project. For further coding detais, you can check the [Technical Report - Python Project.ipynb](https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Python/Files/Technical%20Report%20-%20Python%20Project.ipynb) on the files folder.
 
 ## Company Context & Business Problem
 
@@ -21,24 +21,20 @@ To answer those questions, the steps taken were:
 2. Do an exploratory analysis of the dataset
 3. Do a data cleaning of the dataset
 4. Make a statistic summary
-
-
 5. Redo the exploratory analysis after changes
-
-
 6. Answer the proposed business questions
 
 -------------------------
 ### Business Problem nº1 - Is there any outlier in tumor volume for each treatment?
 
-![Business Problem 1](output_42_0.png)
+![Business Problem 1](https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Python/Files/output_1.png)
 
 **Answer**: There is no outlier in the drug treatment regarding the final tumor volume.
 
 -------------------------
 ### Business Problem nº2 - Is there an effect on tumor volume over time with the use of the drugs?
 
-![Business Problem 2](output_47_0.png)
+![Business Problem 2](https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Python/Files/output_2.png)
     
 **Answer**: The average value of tumor size seems to decay across time on the research. Thus, it seems to be an effect on tumor size with the drug administration.
 For further investigation, some changes on the research approach will have to happen, such as testing only one drug in each mouse, or using a standardized drug aplication method for us to be able to better compare the results of each drug administration to the Placebo. After that, we should calculate the significance of the results.
@@ -46,7 +42,7 @@ For further investigation, some changes on the research approach will have to ha
 -------------------------
 ### Business Problem nº3 - For each drug, what is the relationship between the weight of the mouse and the size of the tumor?
 
-![Business Problem 3](output_57_0.png)
+![Business Problem 3](https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Python/Files/output_3.png)
     
 **Answer**: The proximity of all three correlations is next to 0. Thus, it's a weak/null correlation between tumor volume and mouse weight.
 
