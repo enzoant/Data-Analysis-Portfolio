@@ -33,8 +33,32 @@ Here you can dive into detail of the thought process of each project I've built 
   </tr>
 </table>
 
+## [Python project - Pharmaceutical research analysis](https://github.com/enzoant/Data-Analysis-Portfolio/tree/Data-Analysis/Python)
 
+<p>
+    This project focus on the statistical analysis of a fictional pharmaceutical research dataset. Each step of data processing is taken to make sure data is ready to be analysed. The statistical analysis is well executed to make sure it's precise and sheds light into the research problems presented.
+</p>
+<table>
+    <tr>
+        <td>
+            <img src="https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Python/Files/output_1.png" alt="Boxplot" width="400"/>
+            <br>
+            <b>Image 4 - Boxplot</b>
+        </td>
+    </tr>
+</table>
 
 ## [SQL Project - Customer Segmentation](https://github.com/enzoant/Data-Analysis-Portfolio/tree/Data-Analysis/SQL/Customer%20Segmentation)
 
-This project was based on a [Kaggle dataset](https://www.kaggle.com/datasets/carrie1/ecommerce-data/data) and allowed me to extract marketing strategies from it. We extracted information such as (1) **top sales per country**, (2) **list of items that generated the biggest income by country** and (3) **Most sold products per country**. The queries generated allows the marketing team to decide which markets are doing well in their sales and which aren't. If they wish to increase their efforts in their best markets, they can check which products are the main source of income (table 2) and try to focus their growth on them, searching for new buyers. But if they wish to tackle products that are selling a lot but are not generation much income, table 3 can help them identify it.
+This project was based on a [Kaggle dataset](https://www.kaggle.com/datasets/carrie1/ecommerce-data/data) and allowed me to extract marketing strategies from it. We extracted information such as (1) <b>top sales per country</b>, (2) <b>list of items that generated the biggest income by country</b> and (3) <b>Most sold products per country</b>. The queries generated allows the marketing team to decide which markets are doing well in their sales and which aren't. If they wish to increase their efforts in their best markets, they can check which products are the main source of income (table 2) and try to focus their growth on them, searching for new buyers. But if they wish to tackle products that are selling a lot but are not generation much income, table 3 can help them identify it.
+
+<table>
+    <tr>
+        <td>
+            <img src="https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/SQL/Customer%20Segmentation/images%20and%20.csv%20files/customer%20segmentation%20table%202%20(top%205).png" alt="Top 3 income products by country" width="400"/>
+            <br>
+            <b>Image 5 - Top 3 income products by country</b>
+        </td>
+    </tr>
+</table>
+
