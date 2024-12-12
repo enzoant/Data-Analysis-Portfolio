@@ -1,6 +1,6 @@
 # Project Preview
 
-This project will focus on the process of creating a Data Warehouse (DW), adding data to it and visualizing it's data. We well work over a fictional company, with it's activities described below. That information will be used to make the first step of the project: **the company's conceptual model for the DW**.
+This project will focus on the process of creating a Data Warehouse (DW), adding data to it and visualizing it's data. We based our work over a fictional company, with it's activities described below. That information will be used to make the first step of the project: **the company's conceptual model for the DW**.
 
 After a series of meetings with different sectors of the company and senior leadership, here is the general overview of the project:
 
