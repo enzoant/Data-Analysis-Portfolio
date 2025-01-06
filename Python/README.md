@@ -6,7 +6,7 @@ This description is a quick glimpse on what was analysed on this project. For fu
 
 ## Company Context & Business Problem
 
-A fictional pharmaceutical company is specialized in anti-cancer pharmaceuticals based on medicines. They provided data to test the effectiveness of potential treatments medications for squamous cell carcinoma. In this study, 100 mice identified with tumor growth of squamous cell carcinoma (SCC), a type of skin cancer, have been treated through a variety of drug regimens. Over 45 days, tumor development was observed and measured. The objective is to analyze the data to show how four treatments (Capomulin, Ramicane, Infubinol and Placebo) compare.
+A pharmaceutical company is specialized in anti-cancer pharmaceuticals based on medicines. They provided data to test the effectiveness of potential treatments medications for squamous cell carcinoma. In this study, 100 mice identified with tumor growth of squamous cell carcinoma (SCC), a type of skin cancer, have been treated through a variety of drug regimens. Over 45 days, tumor development was observed and measured. The objective is to analyze the data to show how four treatments (Capomulin, Ramicane, Infubinol and Placebo) compare.
 
 We must answer these 3 questions:
 
