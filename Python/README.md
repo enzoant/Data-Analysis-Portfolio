@@ -4,8 +4,6 @@ This project will focus on presenting some data processing and statistical anali
 
 This description is a quick glimpse on what was analysed on this project. For further coding detais, you can check the [Technical Report - Python Project.ipynb](https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Python/Files/Technical%20Report%20-%20Python%20Project.ipynb) on the files folder.
 
-At last, data presented here is fictional and should not be considered to decision making for any real company.
-
 ## Company Context & Business Problem
 
 A fictional pharmaceutical company is specialized in anti-cancer pharmaceuticals based on medicines. They provided data to test the effectiveness of potential treatments medications for squamous cell carcinoma. In this study, 100 mice identified with tumor growth of squamous cell carcinoma (SCC), a type of skin cancer, have been treated through a variety of drug regimens. Over 45 days, tumor development was observed and measured. The objective is to analyze the data to show how four treatments (Capomulin, Ramicane, Infubinol and Placebo) compare.
