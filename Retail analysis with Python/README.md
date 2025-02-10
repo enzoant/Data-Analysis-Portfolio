@@ -16,6 +16,8 @@ This project analyzes a retail dataset to uncover insights into customer purchas
    - Detection of outliers and potential anomalies in purchasing behavior.
 4. **Data Visualization**:
    - Various plots are generated to illustrate trends in sales and customer activity.
+5. **Insight extraction and questions answering**:
+   - Several questions were answered and, based on the insights extracted from them, it was possible to generate a report with an action plan.
 
 ## Technologies Used
 
