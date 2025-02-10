@@ -32,3 +32,5 @@ This analysis helps retailers understand sales trends, detect anomalies, and imp
 ## Results
 
 All the results have been sumarized in the PDF file attached in this repository, named "[Retail Report.pdf](https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Retail%20analysis%20with%20Python/Retail%20Report.pdf)".
+
+All the technical specificities can be found at the .ipynb file, named "[retail_project_script.ipynb](https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Retail%20analysis%20with%20Python/retail_project_script.ipynb)".
