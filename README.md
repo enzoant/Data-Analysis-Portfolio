@@ -62,3 +62,16 @@ This project was based on a [Kaggle dataset](https://www.kaggle.com/datasets/car
     </tr>
 </table>
 
+## [Python Project - Retail Data Analysis](https://github.com/enzoant/Data-Analysis-Portfolio/tree/Data-Analysis/Retail%20analysis%20with%20Python)
+
+This project analyzes a retail dataset to uncover insights into customer purchasing behavior. The dataset contains transactional data, including product details, quantities sold, prices, and customer identifiers. The main objective is to clean, pr ocess, and visualize the data to extract meaningful insights.
+
+<table>
+    <tr>
+        <td>
+            <img src="https://github.com/enzoant/Data-Analysis-Portfolio/blob/Data-Analysis/Retail%20analysis%20with%20Python/Images/02_bar_grapth_seasonal.png" alt="TEXT" width="400"/>
+            <br>
+            <b>Image 6 - Monthly revenue during reported period</b>
+        </td>
+    </tr>
+</table>
