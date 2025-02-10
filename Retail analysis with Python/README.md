@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project analyzes a retail dataset to uncover insights into customer purchasing behavior. The dataset contains transactional data, including product details, quantities sold, prices, and customer identifiers. The main objective is to clean, pr ocess, and visualize the data to extract meaningful insights.
+This project analyzes a retail dataset to uncover insights into customer purchasing behavior. The dataset contains transactional data, including product details, quantities sold, prices, and customer identifiers. The main objective is to clean, process, and visualize the data to extract meaningful insights.
 
 ## Key Steps
 
