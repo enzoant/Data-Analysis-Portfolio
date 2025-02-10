@@ -1,5 +1,4 @@
-# Retail Data Analysis
-
+# Retail Data Analysis + Strategic Report Extraction
 ## Project Overview
 
 This project analyzes a retail dataset to uncover insights into customer purchasing behavior. The dataset contains transactional data, including product details, quantities sold, prices, and customer identifiers. The main objective is to clean, process, and visualize the data to extract meaningful insights.
