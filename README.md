@@ -7,7 +7,7 @@ I'm a graduated Biologist with a Data Analysis specialization undergoing.
 
 Here you can dive into detail of the thought process of each project I've built by navigating into the folders, or having a quick glance at my favorite down below.
 
-## [Data Modelling and SQL DB Creation Project](https://github.com/enzoant/Data-Analysis-Portfolio/tree/Data-Analysis/Data%20Modelling)
+## [Data Modelling and SQL DB Creation Project + PowerBI visualization](https://github.com/enzoant/Data-Analysis-Portfolio/tree/Data-Analysis/Data%20Modelling)
 
 <p>
     This project is a full creation of a Data Warehouse (DW) on a PostgreSQL server, and it's visualization on PowerBI. The images shown represent the Star Schema Model, evaluated as the best choice for the company's Dimensional Model, as well as two dashboards created with the data inserted on the DW.
@@ -62,7 +62,7 @@ This project was based on a [Kaggle dataset](https://www.kaggle.com/datasets/car
     </tr>
 </table>
 
-## [Python Project - Retail Data Analysis](https://github.com/enzoant/Data-Analysis-Portfolio/tree/Data-Analysis/Retail%20analysis%20with%20Python)
+## [Python Project - Retail Data Analysis + Strategic Report Generation](https://github.com/enzoant/Data-Analysis-Portfolio/tree/Data-Analysis/Retail%20analysis%20with%20Python)
 
 This project analyzes a retail dataset to uncover insights into customer purchasing behavior. The dataset contains transactional data, including product details, quantities sold, prices, and customer identifiers. The main objective is to clean, pr ocess, and visualize the data to extract meaningful insights.
 
